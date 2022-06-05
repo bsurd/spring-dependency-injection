@@ -1,6 +1,9 @@
 package com.springframework.sfdi;
 
+import com.springframework.sfdi.config.SfConfiguration;
+import com.springframework.sfdi.config.SfConstructorConfig;
 import com.springframework.sfdi.controllers.*;
+import com.springframework.sfdi.datasource.FakeDataSource;
 import com.springframework.sfdi.services.PrototypeBean;
 import com.springframework.sfdi.services.SingletonBean;
 import org.springframework.boot.SpringApplication;
@@ -49,6 +52,24 @@ public class SfDiApplication {
 		System.out.println(prototypeBean1.getMyScope());
 		PrototypeBean prototypeBean2 = ctx.getBean(PrototypeBean.class);
 		System.out.println(prototypeBean2.getMyScope());
+
+		System.out.println("--------Fake Data Source");
+		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
+		System.out.println(fakeDataSource.getUsername());
+		System.out.println(fakeDataSource.getPassword());
+		System.out.println(fakeDataSource.getJdbcurl());
+
+		System.out.println("--------Config Prop Bean");
+		SfConfiguration sfConfiguration = ctx.getBean(SfConfiguration.class);
+		System.out.println(sfConfiguration.getUsername());
+		System.out.println(sfConfiguration.getPassword());
+		System.out.println(sfConfiguration.getJdbcurl());
+
+		System.out.println("--------Constructor Binding");
+		SfConstructorConfig sfConstructorConfig = ctx.getBean(SfConstructorConfig.class);
+		System.out.println(sfConstructorConfig.getUsername());
+		System.out.println(sfConstructorConfig.getPassword());
+		System.out.println(sfConstructorConfig.getJdbcurl());
 	}
 
 }

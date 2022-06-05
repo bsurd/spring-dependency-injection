@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active:
+      - ES
+      - dog
+      - dev
+fake:
+  username: ymlUser
+  password: ymlPass
+  jdbcurl: ymlUrl
+
+---
+spring:
+  profiles: prod
+fake:
+  username: prodUser
+  password: prodPass
+  jdbcurl: prodUrl

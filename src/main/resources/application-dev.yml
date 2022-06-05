@@ -1,0 +1,4 @@
+fake:
+  username: devUser
+  password: devPass
+  jdbcurl:  devUrl

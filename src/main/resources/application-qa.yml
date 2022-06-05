@@ -1,0 +1,4 @@
+fake:
+  username: qaUser
+  password: qaPass
+  jdbcurl: qaUrl
